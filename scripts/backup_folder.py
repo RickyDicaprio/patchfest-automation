@@ -1,28 +1,24 @@
-#!/usr/bin/env python3
-"""
-Backup any folder into a timestamped ZIP archive.
-"""
-
 import os
-import sys
 import shutil
-from datetime import datetime
 
-def backup(source_folder):
-    if not os.path.exists(source_folder):
-        print("❌ Folder does not exist.")
-        return
-    
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_name = f"backup_{timestamp}.zip"
-    
-    shutil.make_archive(f"backup_{timestamp}", "zip", source_folder)
-    
-    print(f"✔ Backup created: {backup_name}")
+def backup_folder(src, dst):
+    """
+    Copy all files and folders from src to dst.
+    """
+    src = os.path.abspath(src)
+    dst = os.path.abspath(dst)
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python backup_folder.py <folder_to_backup>")
-        sys.exit(1)
+    if not os.path.exists(src):
+        raise FileNotFoundError(f"Source folder does not exist: {src}")
 
-    backup(sys.argv[1])
+    if not os.path.exists(dst):
+        os.makedirs(dst)
+
+    # Copy all files and subfolders
+    for item in os.listdir(src):
+        s_item = os.path.join(src, item)
+        d_item = os.path.join(dst, item)
+        if os.path.isdir(s_item):
+            shutil.copytree(s_item, d_item, dirs_exist_ok=True)
+        else:
+            shutil.copy2(s_item, d_item)

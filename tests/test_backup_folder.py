@@ -1,6 +1,5 @@
-import os
-import shutil
-from src.backup import backup_folder
+import pytest
+from scripts.backup_folder import backup_folder
 
 def test_backup_folder_creates_destination(tmp_path):
     src = tmp_path / "source"
@@ -23,6 +22,3 @@ def test_backup_folder_copies_files(tmp_path):
     copied_file = dst / "test.txt"
     assert copied_file.exists()
     assert copied_file.read_text() == "hello"
-def backup_folder(src, dst):
-    # BUG: doesn't actually copy anything
-    print(f"Backup from {src} to {dst}, but not doing it :)")
