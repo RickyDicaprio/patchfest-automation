@@ -1,0 +1,30 @@
+name: "Easy Issue"
+description: "A beginner-friendly, small, well-defined task."
+labels: ["good first issue", "easy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! This issue is small and good for newcomers.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Brief description of the issue.
+      placeholder: "What needs to be done?"
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps / Tasks
+      description: List of steps required to complete this issue.
+      placeholder: "- [ ] Step 1"
+  
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional notes or references.
+      placeholder: "Any extra context..."
+      optional: true

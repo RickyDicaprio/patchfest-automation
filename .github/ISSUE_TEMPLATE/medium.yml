@@ -1,0 +1,35 @@
+name: "Medium Issue"
+description: "A moderately complex task."
+labels: ["medium"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue requires some familiarity with the project or technology.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe what needs to be solved.
+      placeholder: "What's the problem?"
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / Background
+      description: Provide details for better context.
+      placeholder: "Background, current behavior, expected behavior..."
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true for this issue to be considered done?
+      placeholder: "- [ ] Condition 1"
+  
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      optional: true

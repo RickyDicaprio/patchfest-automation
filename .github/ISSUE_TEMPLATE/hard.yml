@@ -1,0 +1,42 @@
+name: "Hard Issue"
+description: "Challenging task requiring deep understanding or major changes."
+labels: ["hard", "advanced"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue involves a difficult or high-impact change.  
+        Please provide as much detail as possible.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: "High-level description of the issue."
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: Explain the problem, current behavior, and root cause.
+      placeholder: "Explain the full context..."
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution / Approach
+      description: Describe the intended approach or design.
+      placeholder: "- Proposed architecture\n- Modules affected\n- Trade-offs"
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / Considerations
+      description: List risks, alternatives, performance impact, etc.
+      placeholder: "- Risk 1\n- Risk 2"
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      placeholder: "- [ ] Must handle X\n- [ ] Should improve Y"

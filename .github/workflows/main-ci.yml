@@ -1,0 +1,57 @@
+name: Main CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        language: [node, python] # Modify as needed
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup for Node.js
+      - name: Setup Node.js
+        if: matrix.language == 'node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install Node dependencies
+        if: matrix.language == 'node'
+        run: npm install
+
+      - name: Run Node tests
+        if: matrix.language == 'node'
+        run: npm test
+
+      # Setup for Python
+      - name: Setup Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        if: matrix.language == 'python'
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run Python tests
+        if: matrix.language == 'python'
+        run: pytest
+
+      - name: Lint Check
+        run: echo "Add linting tools here (flake8, eslint, etc)"
+
+      - name: Build Step
+        run: echo "Add build step here if applicable"
