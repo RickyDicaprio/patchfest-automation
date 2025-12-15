@@ -26,6 +26,22 @@ npm run script_name
 ## Environment Setup
 - How to configure environment variables or .env files.
 
+## Running Tests
+
+Before submitting a PR, run the test suite to ensure your scripts work correctly:
+
+```bash
+./ci/run_tests.sh
+```
+
+This will run all unit tests using pytest. Make sure pytest is installed (`pip install -r requirements.txt`).
+
+### Writing Tests
+
+- Add test files in `tests/` with the naming pattern `test_<script_name>.py`
+- Use pytest fixtures for temporary directories and files
+- Test both success and error cases
+
 ## Troubleshooting
 - Common errors and fixes.
 
