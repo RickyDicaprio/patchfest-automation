@@ -48,10 +48,10 @@ Use the tests in the tests/ directory to guide your fixes.
 
 # Documentation
 Detailed guides are provided in the docs/ directory:
-   ->Automation overview
-   ->How to run scripts
-   ->Docker usage guide
-   ->CI pipeline documentation
+   -> [Docker Guide](docs/docker_guide.md) - Complete Docker setup and usage guide for beginners
+   -> [Automation Overview](docs/automation_overview.md) - High-level overview of the automation framework
+   -> [How to Run Scripts](docs/how_to_run_scripts.md) - Detailed guide for executing automation scripts
+   -> [CI Pipeline Documentation](docs/ci_guide.md) - Setting up and understanding CI/CD workflows
 
 # Using Docker
 If your patch involves Docker automation:
