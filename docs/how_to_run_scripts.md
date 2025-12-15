@@ -5,7 +5,22 @@
 - Environment variables that must be set.
 
 ## Script Directory Structure
-- Overview of /scripts/* and what each script does.
+See `scripts/README.md` for a detailed overview of all scripts and their purposes.
+
+## Creating New Scripts
+
+To create a new automation script, use the provided template:
+
+1. Copy `templates/automation_script_template.py` to `scripts/your_script_name.py`
+2. Customize the script with your logic, following the naming convention (snake_case).
+3. Add a short comment at the top explaining the script's purpose.
+4. Update `scripts/README.md` to document the new script.
+
+The template includes:
+- Command-line argument parsing with `argparse`
+- Logging setup for info and error messages
+- Sample `main()` function structure
+- Error handling examples
 
 ## Running Scripts
 
@@ -31,4 +46,27 @@ npm run script_name
 
 ## Examples
 - Practical examples of typical script runs.
+
+### Example: Running the Sample Hello Script
+```bash
+python scripts/sample_hello.py
+```
+Output:
+```
+🚀 Automation Script Running Successfully!
+Current Time: 2025-12-15 12:00:00.000000
+```
+
+### Example: Running the System Info Script
+```bash
+./scripts/system_info.sh
+```
+Output:
+```
+===============================
+      SYSTEM INFORMATION
+===============================
+Hostname: your-hostname
+...
+```
 
