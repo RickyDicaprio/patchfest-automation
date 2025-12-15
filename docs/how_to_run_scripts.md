@@ -7,6 +7,35 @@
 ## Script Directory Structure
 - Overview of /scripts/* and what each script does.
 
+## Creating New Scripts
+
+To create a new automation script, use the provided template:
+
+1. Copy `templates/automation_script_template.py` to `scripts/your_script_name.py`
+2. Customize the script with your logic, following the naming convention (snake_case).
+3. Add a short comment at the top explaining the script's purpose.
+4. Update `scripts/README.md` to document the new script.
+
+The template includes:
+- Command-line argument parsing with `argparse`
+- Logging setup for info and error messages
+- Sample `main()` function structure
+- Example function for demonstration
+- Error handling examples
+
+### Example Usage of the Template
+```bash
+# Create a test input file
+echo "hello world" > input.txt
+
+# Run the template script
+python scripts/your_script.py --input input.txt --output output.txt
+
+# Check the output
+cat output.txt
+# Output: HELLO WORLD
+```
+
 ## Running Scripts
 
 ### Running Shell Scripts
