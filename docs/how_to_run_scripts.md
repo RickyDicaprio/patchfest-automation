@@ -32,3 +32,11 @@ npm run script_name
 ## Examples
 - Practical examples of typical script runs.
 
+
+## Running Tests
+
+To verify the scripts are working correctly, run the test suite:
+
+```bash
+./run_tests.sh
+
