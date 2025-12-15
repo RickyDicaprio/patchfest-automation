@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Backup Folder Script
+
+This script backs up all files and folders from a source directory to a destination directory.
+"""
+
 import os
 import shutil
 
