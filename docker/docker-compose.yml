@@ -1,9 +1,17 @@
 version: "3.9"
 
 services:
-  my_python_app:
-    build: .
-    container_name: my_python_app_container
+  automation_scripts:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: patchfest_automation_container
     volumes:
-      - .:/app
-    command: ["python3", "sample_hello.py"]
+      - ../scripts:/app/scripts
+      - ../tests:/app/tests
+      - ../templates:/app/templates
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    # Override entrypoint to run specific scripts
+    # Usage: docker-compose run automation_scripts python scripts/backup_folder.py --help
